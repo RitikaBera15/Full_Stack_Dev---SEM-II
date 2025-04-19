@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>
+        Data
+    </title>
+</head>
+<body>
+<center>
+    <h1><mark>Student List for Signifiya</mark></h1>
+    <table border="2px" width="100%">
+    <tr>
+        <td>NAME</td>
+        <td>ROLL</td>
+        <td>REG. NO.</td>
+        <td>SCHOOL</td>
+
+        <td>ROLE IN SIGNIFIYA</td>
+        <td colspan="2" align="center">Modification</td>
+    </tr>
+    {{#each data}}
+        <form method="post" action="/update" >
+            <tr>
+                <input name="id" hidden type="text" value="{{this._id}}">
+                <td>
+                    <input type="text" name="name" value="{{this.name}}" style="border: 0px">
+                </td>
+                <td>
+                    <input type="text" name="roll" value="{{this.roll}}" style="border: 0px">
+                </td>
+                <td>
+                    <input type="text" name="reg" value="{{this.reg}}" style="border: 0px">
+                </td>
+                <td>
+                    <input type="text" name="school" value="{{this.school}}" style="border: 0px">
+                </td>
+                <td width="fit-content">
+
+
+                    <select name="role" style="width: 500px; padding: 5px;" required>
+                        <option value="{{this.role}}" selected>{{this.role}}</option>
+                        <option value="Sponsorship Team">Sponsorship Team</option>
+                        <option value="Invitation Team">Invitation Team</option>
+                        <option value="Volunteer Team">Volunteer Team</option>
+                        <option value="Social Media Team">Social Media Team</option>
+                        <option value="Participant - Coding Premier League">Participant - Coding Premier League</option>
+                        <option value="Participant - Science Olympiad">Participant - Science Olympiad</option>
+                        <option value="Participant - PATH FOLLOWER (Design Build & Race)">Participant - PATH FOLLOWER (Design Build & Race)</option>
+                        <option value="Participant - RE-FAB (3D Modelling & Printing)">Participant - RE-FAB (3D Modelling & Printing)</option>
+                        <option value="Participant - LATHE WAR (Mechanical Challenges)">Participant - LATHE WAR (Mechanical Challenges)</option>
+                        <option value="Participant - TOWER MAKING">Participant - TOWER MAKING</option>
+                        <option value="Participant - BRIDGE BUILDING">Participant - BRIDGE BUILDING</option>
+                        <option value="Participant - VALORANT (Gaming Battles)">Participant - VALORANT (Gaming Battles)</option>
+                        <option value="Participant - PES (Gaming Battles)">Participant - PES (Gaming Battles)</option>
+                        <option value="Participant - Tech Talks & Competitions">Participant - Tech Talks & Competitions</option>
+                        <option value="Participant - TUG OF WAR">Participant - TUG OF WAR</option>
+                        <option value="Participant - TREASURE HUNT">Participant - TREASURE HUNT</option>
+                    </select>
+                </td>
+                <td align="center">
+                    <input name="btn" type="submit" value="UPDATE">
+                </td>
+                <td style="width: fit-content" align="center">
+                    <input name="btn" type="submit" value="DELETE">
+                </td>
+            </tr>
+        </form>
+    {{/each}}
+</table>
+
+</center>
+</body>
+<style>
+    td{
+        padding: 10px;
+
+    }
+</style>
+</html>
